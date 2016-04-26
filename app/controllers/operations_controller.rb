@@ -44,7 +44,7 @@ def operations_with_operand
 		when "-"
 			sub = first_num - second_num
 			respond_to do |format|
-				format.json { render json: {sub: "#{sum}"}}
+				format.json { render json: {sub: "#{sub}"}}
 			end #respond_to
 
 		when "*"
@@ -59,4 +59,17 @@ def operations_with_operand
 				end #respond_to
 end #case
 end #operations_with_operand
+
+def add_multiple_numbers
+	i=0
+	sum=0
+	numbers = params[:numbers].split(/,/)
+	while i<numbers.length
+		sum=sum+numbers[i].to_i
+		i=i+1
+	end #while
+	respond_to do |format|
+		format.json { render json: {sum:"#{sum}" }}
+	end #respond_to
+end #add_multiple_numbers
 end #Controler
