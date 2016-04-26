@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  match 'operations' => 'operations#operations', via: [:get, :post]
-  
+  match 'operations' => 'operations#operations', via: [:post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
