@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   
   match 'operations' => 'operations#operations', via: [:post]
-  match 'sum' => 'operations#sum', via: [:post]
+
+  match 'sum' => 'operations#sum', via: [:get, :post]
+
+  match 'operations_with_operand' => 'operations#operations_with_operand', via: [:post]
+
+  # GET - http://localhost:3000/sum.json?first_num=10&second_num=89
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
